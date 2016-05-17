@@ -4,29 +4,31 @@
 
 > Was used Python 3.x version.
 
-## First: Change the config files to your environment:
+## First: Change the config files to your environment
 
-* nginx-example, uwsgi.conf, uwsgi-example.ini
-Change all the uppercase word to your data.
+* Change all the uppercase word to your data.
 
-## Second: Setting uwsgi and nginx up:
+`nginx-example, uwsgi.conf, uwsgi-example.ini`
 
-* Run `uwsgi_nginx.sh` (DO NOT run as root) giving the project name as the first argument and your user name as second.
+
+## Second: Setting uwsgi and nginx up
+
+* Run `start.sh` (DO NOT run as root) giving the **project name as the first argument** and your **user name as second**.
 
 ```sh
-$ chmod +x uwsgi_nginx.sh
-$ ./uwsgi_nginx.sh PROJECT_NAME MY_USER
+$ chmod +x start.sh
+$ ./start.sh PROJECT_NAME MY_USER
 ```
-## Third: Updating session:
+## Third: Updating session
 
-### As was installed virtualenvwrapper, it is necessary reload the session.
+### As virtualenvwrapper was installed, it is necessary reload the session.
 ```sh
 $ source ~/.bashrc
 ```
 
-## Fourth: Everything should be fine, so create the Django project as usual.
+## Fourth: Everything should be fine, then create the Django project as usual
 
-#### Create the virtual environment givin the name of your project:
+#### Create the virtual environment giving the project's name:
 ```sh
 $ mkvirtualenv PROJECT_NAME
 ```
@@ -36,6 +38,8 @@ $ mkvirtualenv PROJECT_NAME
 * Create a directory at home with the same name of your project:
 ```sh
 $ mkdir ~/PROJECT_NAME
+
+$ cd ~/PROJECT_NAME
 
 $ pip install django
 
@@ -49,8 +53,9 @@ $ django-admin.py startproject PROJECT_NAME .
 `STATIC_ROOT = os.path.join(BASE_DIR, "static/")`
 
 * Then run:
-
-`$PYTHON_PATH $MANAGE collectstatic`
+```sh
+ python manage.py collectstatic
+```
 
 ## Last one: Restart and everything should work. :]
 ```sh
