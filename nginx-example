@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name IP_OR_DOMAIN;
+
+    location = /favicon.ico {access_log off; log_not_found off;}
+    location /static/ {
+        root /home/MY_USER/PROJECT_NAME/;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/tmp/PROJECT_NAME.sock;
+    }
+}
