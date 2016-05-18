@@ -4,6 +4,18 @@
 PROJECT_NAME=$1
 USER=$2
 
+# Test if the user is root. This script can't run as root.
+if [ "$EUID" -eq 0 ]; then
+  echo "Do not run this script as root!!" 2>&1
+  exit 1
+fi
+
+# Check is the names was given.
+if [ "$PROJECT_NAME" == "" ] || [ "$USER" == "" ]; then
+  echo "Give the project's name as the first argument and your user name as second." 2>&1
+  exit 1
+fi
+
 # Update system
 echo 'yes' | sudo apt-get update
 echo 'yes' | sudo apt-get upgrade
@@ -23,7 +35,6 @@ mkdir $HOME/logs
 touch "/tmp/$PROJECT_NAME.sock"
 
 ## Add permissions
-sudo chown $USER:www-data /tmp/$PROJECT_NAME.sock
 chmod u+rw /tmp/$PROJECT_NAME.sock
 chmod g+rw /tmp/$PROJECT_NAME.sock
 
@@ -45,6 +56,11 @@ echo "Press ENTER to continue"
 read
 
 sudo service nginx restart
+
+# If uwsgi.service file does not exits, create it.
+if [ ! -s /etc/systemd/system/uwsgi.service ]; then
+  sudo cp uwsgi.service /etc/systemd/system/uwsgi.service
+fi
 
 sudo service uwsgi start
 

@@ -17,7 +17,7 @@
 
 ```sh
 $ chmod +x start.sh
-$ ./start.sh PROJECT_NAME MY_USER
+$ ./start.sh PROJECT_NAME YOUR_USER
 ```
 ## Third: Updating session
 
@@ -61,4 +61,13 @@ $ django-admin.py startproject PROJECT_NAME .
 ```sh
 $ sudo service uwsgi restart
 $ sudo service nginx restart
+```
+
+## If you are getting `505 error Bad Gateway`, run this:
+`sudo chown YOUR_USER:www-data /tmp/PROJECT_NAME.sock`
+
+Your sock file must be like this:
+```sh
+$ ls -l /tmp
+srw-rw-r--  1 userver www-data    0 Mai 18 13:28 PROJECT_NAME.sock=
 ```
