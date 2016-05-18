@@ -13,7 +13,7 @@
 
 ## Second: Setting uwsgi and nginx up
 
-* Run `start.sh` (DO NOT run as root) giving the **project name as the first argument** and your **user name as second**.
+* Run `start.sh` (DO NOT run as root) giving the **project's name as the first argument** and your **user name as second**.
 
 ```sh
 $ chmod +x start.sh
