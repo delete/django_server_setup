@@ -1,8 +1,11 @@
 # Script to Setting up Django with uWsgi and Nginx
 
->Theses scripts was created following the amazing [Digital Ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04).
+>This script was created following the amazing [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04).
 
-> Was used Python 3.x version.
+## OS tested:
+* Ubuntu 14.04 and 16.04.
+
+>Was used Python 3.x version.
 
 ## First: Change the config files to your environment
 
