@@ -64,7 +64,7 @@ $ mkvirtualenv PROJECT_NAME
 
 ## Six: Now, the Django process...
 
-* Create a directory at home with the same name of your project:
+#### Create a directory at home with the same name of your project, install django and create a new project:
 ```sh
 $ mkdir ~/PROJECT_NAME
 
