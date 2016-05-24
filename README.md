@@ -29,14 +29,12 @@ $ ./start.sh PROJECT_NAME YOUR_USER
 $ source ~/.bashrc
 ```
 
-## Fourth: Everything should be fine, then create the Django project as usual
-
 #### Create the virtual environment giving the project's name:
 ```sh
 $ mkvirtualenv PROJECT_NAME
 ```
 
-## Five: Configure PostgreSQL
+## Four: Configure PostgreSQL
 
 * Becoming postgres superuser 
 
@@ -62,7 +60,7 @@ $ mkvirtualenv PROJECT_NAME
 `\q`
 
 
-## Six: Now, the Django process...
+## Five: Now, the Django process...
 
 #### Create a directory at home with the same name of your project, install django and create a new project:
 ```sh
