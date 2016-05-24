@@ -22,7 +22,10 @@ echo 'yes' | sudo apt-get upgrade
 
 
 # Install dependencies
-sudo apt-get -y install python3-pip python3-dev nginx libpq-dev postgresql postgresql-contrib
+sudo apt-get -y install python3-pip python3-dev nginx libpq-dev postgresql postgresql-contrib 
+
+# It is needed if the project is using pillow.
+sudo apt-get -y install libjpeg8-dev
 
 ## Now that we have pip installed, we can install virtualenv, virtualenvwrapper and uwsgi
 sudo pip3 install virtualenv virtualenvwrapper uwsgi
