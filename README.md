@@ -22,7 +22,7 @@
 $ chmod +x start.sh
 $ ./start.sh PROJECT_NAME YOUR_USER
 ```
-## Third: Updating session
+## Third: Updating session and create virtual environment
 
 ### As virtualenvwrapper was installed, it is necessary reload the session.
 ```sh
