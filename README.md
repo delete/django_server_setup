@@ -36,7 +36,33 @@ $ source ~/.bashrc
 $ mkvirtualenv PROJECT_NAME
 ```
 
-#### Now, the Django process...
+## Five: Configure PostgreSQL
+
+* Becoming postgres superuser 
+
+`$sudo su - postgres`
+
+* Connecting to the database server
+
+`~$ psql template1`
+
+* Add new user
+
+`# create user MY_DB_USER with password 'MY_PASS';`
+
+* Create database
+
+`# create database MY_DATABASE;`
+
+* Grant all privileges
+
+`# grant all privileges on database MY_DATABASE to MY_DB_USER;`
+
+* To quit
+`\q`
+
+
+## Six: Now, the Django process...
 
 * Create a directory at home with the same name of your project:
 ```sh
@@ -47,6 +73,21 @@ $ cd ~/PROJECT_NAME
 $ pip install django
 
 $ django-admin.py startproject PROJECT_NAME .
+```
+
+#### Change SQLlite3(default) to PostgreSQL at `settings.py`
+
+```sh
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'MY_DATABASE',
+        'USER': 'MY_DB_USER',
+        'PASSWORD': 'MY_PASS',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 ```
 
 #### Setting up static directory which will be serve by nginx.
@@ -66,7 +107,7 @@ $ sudo service uwsgi restart
 $ sudo service nginx restart
 ```
 
-## If you are getting `505 error Bad Gateway`, run this:
+## If you are getting `505 error Bad Gateway`, run:
 `sudo chown YOUR_USER:www-data /tmp/PROJECT_NAME.sock`
 
 Your sock file must be like this:

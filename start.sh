@@ -22,7 +22,7 @@ echo 'yes' | sudo apt-get upgrade
 
 
 # Install dependencies
-sudo apt-get -y install python3-pip python3-dev nginx
+sudo apt-get -y install python3-pip python3-dev nginx libpq-dev postgresql postgresql-contrib
 
 ## Now that we have pip installed, we can install virtualenv, virtualenvwrapper and uwsgi
 sudo pip3 install virtualenv virtualenvwrapper uwsgi
