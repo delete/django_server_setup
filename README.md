@@ -42,7 +42,7 @@ $ mkvirtualenv PROJECT_NAME
 
 * Connecting to the database server
 
-`~$ psql template1`
+`~$ psql`
 
 * Add new user
 
