@@ -111,5 +111,5 @@ $ sudo service nginx restart
 Your sock file must be like this:
 ```sh
 $ ls -l /tmp
-srw-rw-r--  1 userver www-data    0 Mai 18 13:28 PROJECT_NAME.sock=
+srw-rw-r--  1 YOUR_USER www-data    0 Mai 18 13:28 PROJECT_NAME.sock=
 ```
